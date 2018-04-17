@@ -37,7 +37,7 @@ class Stack {
    * @returns {*}
    */
   pop() {
-    if (this.isEmpty()) {
+    if (this.isEmpty) {
       return null;
     }
     return this._items.pop();
@@ -48,7 +48,7 @@ class Stack {
    * @returns {*}
    */
   peek() {
-    if (this.isEmpty()) {
+    if (this.isEmpty) {
       return null;
     }
     return this._items[this.size - 1];

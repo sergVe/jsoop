@@ -5,35 +5,52 @@ class Stack {
    * Создает стек
    * @param {...*} [items] Элементы добавляемые в стек
    */
-  constructor() {}
-
+  constructor() {
+    this._items = [];
+  }
   /**
    * Возвращает количество элементов
    * @returns {number}
    */
-  get size() {}
+  get size() {
+    return this._items.length;
+  }
 
   /**
    * Возвращает `true` если стек пустой, в противном случае возвращается `false`
    * @returns {boolean}
    */
-  get isEmpty() {}
+  get isEmpty() {
+    return this.size === 0;
+  }
 
   /**
    * Добавляет элемент
    * @param {*} item
    */
-  push() {}
+  push(item) {
+    this._items.push(item);
+  }
 
   /**
    * Удаляет и возвращает последний элемент
    * @returns {*}
    */
-  pop() {}
+  pop() {
+    if (this.isEmpty()) {
+      return null;
+    }
+    return this._items.pop();
+  }
 
   /**
    * Возвращает последний элемент
    * @returns {*}
    */
-  peek() {}
+  peek() {
+    if (this.isEmpty()) {
+      return null;
+    }
+    return this._items[this.size - 1];
+  }
 }

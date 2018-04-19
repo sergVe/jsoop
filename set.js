@@ -84,11 +84,11 @@ class Set {
    */
   union(set) {
     if (set.size === 0) {
-      return this;
+      return Set([]);
     }
     const temp = set.values;
     temp.forEach(item => this.add(item[0]));
-    return this;
+    return Set(result);
 
   }
 
@@ -99,8 +99,7 @@ class Set {
    */
   intersection(set) {
     if (set.size === 0 || this.size === 0) {
-      this._items = [];
-      return this;
+      return Set([]);
     }
     let result = [];
     const temp = set.values;
@@ -110,7 +109,7 @@ class Set {
       }
     });
     this._items = result;
-    return this;
+    return Set(result);
   }
 
   /**
@@ -120,7 +119,7 @@ class Set {
    */
   difference(set) {
     if (set.size === 0 || this.size === 0) {
-      return this;
+      return Set([]);
     }
 
     let result = [];
@@ -129,8 +128,8 @@ class Set {
         result = result.concat(item[0])
       }
     });
-    this._items = result;
-    return this;
+
+    return new Set(result);
   }
 
   /**
